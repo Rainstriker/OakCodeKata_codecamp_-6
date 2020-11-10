@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - HTML Form Validation Project</title>
+    <style>
+        form {border: 1px solid #333333; padding: 20px 30px 30px; width: 800px;}
+        h1 {color: darkblue;}
+        h2 {color: #B19CD9;}
+        .formHeader {background-color: white; margin-bottom: -25px; margin-left: 15px; z-index: 1; position: relative; width: 95px; text-align: center;}
+        .book {width: 50px;}
+        .number {width: 200px;}
+    </style>
+</head>
+<body>
+    <h1>A Simple Form</h1>
+    <em><h2>Form Fundamentals</h2></em>
+    <div class="formHeader"><p>Customer Info</p></div>
+    <form action="/action.php">
+        <label for="name">Name: </label><input type="text" placeholder="Enter your name" autofocus required><br><br>
+        <label for="telephone">Telephone: </label><input type="text" placeholder="Pattern 1-234-567-8910" required><br><br>
+        <label for="emal address">Email address: </label><input type="text" placeholder="Enter your email address" required>
+    </form>
+    <div class="formHeader book"><p>Books</p></div>
+    <form action="/action.php">
+        <select name="book" id="bookList">
+            <option value="Gone with the Wind">Gone with the Wind by Margaret Mitchell</option>
+            <option value="Jane Eyre">Jane Eyre by Charlotte Brontë</option>
+            <option value="Pride and Prejudice">Pride and Prejudice by Jane Austen</option>
+            <option value="To Kill a Mockingbird">To Kill a Mockingbird by Harper Lee</option>
+            <option value="The Hobbit, or There and Back Again">The Hobbit, or There and Back Again by J.R.R. Tolkien</option>
+        </select>
+        <label for="quantity">Quantity (Maximum 5): </label><input class="number" type="number" min="1" max="5">
+    </form>
+    <button>Submit</button>
+    <p id="copyright">© 2011 Acme United. All rights reserved.</p>
+</body>
+</html>
