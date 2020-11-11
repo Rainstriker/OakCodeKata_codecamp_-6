@@ -1,0 +1,357 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>Project 3 - Personal Portfolio Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 62.5%;
+            color: white;
+            background-color:  #303841;
+        }
+        #navbar {
+            position: fixed;
+            height: 65.09px; 
+            width: 100%; 
+            background-color: #BE3144; 
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            z-index: 2;
+            }
+        #flexNav {
+            display: flex;
+            justify-content: flex-end;
+            margin: auto;
+            padding-right: 30px;
+            }
+        #navbar li {
+            list-style-type: none;
+            padding: 21.055px;
+        }
+        #navbar li a {
+            display: block;
+            font-size: 20.416px;
+            font-family: sans-serif; 
+            font-weight: 500;
+            text-decoration: none;
+            color: white;   
+        }
+        #navbar li:hover {
+            background-color:rgb(69, 86, 125);
+            cursor: pointer;
+        }   
+        #welcome-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+        }
+        #welcome-section h1 {
+            font-size: 60px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+        }
+        #welcome-section h3 {
+            font-size: 30px;
+            color:  #BE3144;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 0;
+            margin: 0;
+        }
+
+        #projects {
+            background-color: #45567d;
+            padding: 100px 20px;
+        }
+
+        #projects-header {
+            width: 100%;
+            margin: 0 auto 60px auto;
+            text-align: center;
+        }
+
+        #projects-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        #line {
+            min-width: 450px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        #grid-container {
+            margin: auto;
+            max-width: 80%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-gap: 4rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 457.69px;
+            background-color: #303841;
+            border-radius: 3px;
+            box-shadow: 1px 1px 8px #303841;
+        }
+
+        .card img {
+            width: 100%;
+            min-height: 389.69px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .card p {
+            height: 68px;
+            font-size: 20px;
+            padding: 20px 5px;
+            text-align: center;
+            margin: 0
+        }
+
+        #linkTo {
+            text-decoration: none;
+            color: white;
+        }
+
+        .card p span {
+            color:  #303841;
+            transition: color 0.4s;
+        }
+
+        #linkTo:hover > p span {
+            color: rgb(200, 120, 90);
+        }
+
+        .showAll {
+            display: inline-block;
+            padding: 1rem 4rem 1rem 2rem;
+            margin: 60px auto 0 auto;
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-color:  #303841;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+        #arrow {
+            position: absolute;
+            font-size: 3.5rem;
+            z-index: 1;
+            margin-top: -12px;
+            margin-left: 2px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+        }
+        .showAll:hover {
+            background-color:  #BE3144;
+        }
+
+        .showAll:hover > #arrow {
+            margin-left: 5px;
+        }
+
+
+        #contact-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 85vh;
+            background-color: #303841;
+        }
+
+        #contact-section h1 {
+            font-size: 60px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        #contact-section h4 {
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #contact-list {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            height: 60px;
+            flex-wrap: wrap;
+            
+        }
+
+        #contact-list li {
+            list-style-type: none;
+            padding: 10px 20px;
+        }
+
+        #contact-list a {
+            font-size: 24px;
+            font-family: sans-serif; 
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            text-shadow: 1px 2px 3px black;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+        }
+
+        #contact-list a:hover {
+            display: block;
+            padding-top: 20px;
+        }
+
+        footer {
+            position: relative;
+            border-top: 4px solid #BE3144;
+            margin: auto;
+            padding: 15px 0;
+            background-color:  #303841;
+            height: 10%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+
+        @media (max-width: 75em) {
+            html {
+                font-size: 60%;
+                padding: 100px 10px;
+            }
+        }
+
+        @media (max-width: 61.25em) {
+            html {
+                font-size: 58%;
+                padding: 100px 0;
+            }
+            #grid-container {
+            max-width: 100%;
+            }
+ 
+        }
+
+        @media (max-width: 28.75em) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+            <ul id="flexNav">
+                <li><a href="#welcome-section">About</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+    </nav>
+    <section id="welcome-section">
+        <h1>Hey I am Mimic</h1>
+        <em><h3>a web developer</h3></em>
+    </section>
+    <section id="projects">
+        <div id="projects-header">
+            <h1>These are some of my projects</h1>
+            <div id="line"><hr></div>
+        </div>
+        <div id="grid-container">
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tribute.jpg" alt="Tribute Page">
+                    <p><span>&lt;</span> Tribute Page <span>&#47;&gt;</span></p>
+                </a>    
+            </div>
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/random-quote-machine.png" alt="Random Quote machine">
+                    <p><span>&lt;</span> Random Quote machine <span>&#47;&gt;</span></p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/calc.png" alt="JavaScript Calculator">
+                    <p><span>&lt;</span> JavaScript Calculator <span>&#47;&gt;</span></p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/mVEJag" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/map.jpg" alt="Map Data Across the Globe">
+                    <p><span>&lt;</span> Map Data Across the Globe <span>&#47;&gt;</span></p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/wGqEga" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/wiki.png" alt="Wikipedia Viewer">
+                    <p><span>&lt;</span> Wikipedia Viewer <span>&#47;&gt;</span></p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://codepen.io/freeCodeCamp/full/KzXQgy" target="_blank" id="linkTo">
+                    <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tic-tac-toe.png" alt="Tic Tac Toe Game">
+                    <p><span>&lt;</span> Tic Tac Toe Game <span>&#47;&gt;</span></p>
+                </a>
+            </div>
+        </div>
+        <center>
+            <a href="https://codepen.io/FreeCodeCamp/" class="showAll" target="_blank">Show all<span id="arrow">></span></a>
+        </center> 
+    </section>
+    <section id="contact-section">
+        <h1>Let's work together...</h1>
+        <h4>How do you take your coffee?</h4>
+        <div></div>
+        <ul id="contact-list">
+           
+            <li><a href="https://www.facebook.com/freecodecamp" target="_blank">Facebook</a></li>
+            <li><a href="https://github.com/freecodecamp" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/freecodecamp" target="_blank">Twitter</a></li>
+            <li><a href="example@example.com">Send a mail</a></li>
+            <li><a href="tel:555-555-5555">Call me</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>**This is just a fake portfolio. All the projects and contact details given are not real.</p>
+        <p>© Created for freeCodeCamp</p>
+    </footer>
+</body>
+</html>
