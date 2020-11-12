@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+/* -----------------STICKY_NAVBAR-----------------  */
+
+#sticky {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+#sticky h3 {
+    font-family: 'Rokkitt', serif;
+    color: white;
+    margin: 25px 0;
+    font-size: 32px;
+}
+
+#sticky-btn-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    list-style: none;
+    line-height: 30px;
+    margin: 25px 0;
+    height: 50px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.sticky-btn {
+    padding: 0px 15px;
+    margin: auto;
+}
+
+#login-btn {
+    color: white;
+    
+    
+    border: 1px solid red;
+}
+
+#sub-btn {
+    background-color:#FFE400;
+    color: #000;
+    width: 126.86px;
+    height: 30px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 2.5px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+#menu-dropdown {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 4px 0;
+    transition: 0.2s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+  margin: 7px 0;
+  width: 30px;
+
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    margin: 6px 0;
+    width: 30px;
+}
+
+.dropdown-menu {
+    background-color: black;
+}
+
+/* -----------------MENU_DROPDOWN-----------------  */
+
+.slide-menu {
+    border: 1px solid red;
+}
+
+.hv-black:hover {
+    background-color: black;
+    color: white;
+}
