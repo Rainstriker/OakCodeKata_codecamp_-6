@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
-body {
-    font-family: 'Roboto Condensed', sans-serif;
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
 }
 
-/* -----------------STICKY_NAVBAR-----------------  */
+body {
+    background-color: rgb(244, 245, 246);
+}
+/* ------------------------------------------STICKY_NAVBAR-------------------------------------------  */
 
 #sticky {
     display: flex;
@@ -14,38 +20,40 @@ body {
     background-color: grey;
     height: 50px;
     padding: 15px;
-    border: 1px solid red;
+    z-index: 1;
 }
 
-#sticky h3 {
+#sticky  h3 {
     font-family: 'Rokkitt', serif;
     color: white;
     margin: 25px 0;
     font-size: 32px;
 }
 
-#sticky-btn-container {
+.nav-btn-container {
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
     list-style: none;
     line-height: 30px;
     margin: 25px 0;
     height: 50px;
     font-weight: 700;
     font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.sticky-btn {
+.nav-btn {
     padding: 0px 15px;
     margin: auto;
 }
 
 #login-btn {
     color: white;
-    
-    
-    border: 1px solid red;
+}
+
+#login-btn:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #sub-btn {
@@ -58,6 +66,11 @@ body {
     padding: 0 15px;
     font-weight: 700;
     font-size: 18px;
+}
+
+#sub-btn a:hover {
+    color: black;
+    text-decoration: none;
 }
 
 .arrow {
@@ -73,8 +86,7 @@ body {
     -webkit-transform: rotate(-45deg);
 }
 
-#menu-dropdown {
-    display: inline-block;
+#menu-dropdown {   
     cursor: pointer;
 }
 
@@ -107,13 +119,150 @@ body {
     background-color: black;
 }
 
-/* -----------------MENU_DROPDOWN-----------------  */
+.dropdown-menu:focus > .slide-menu {
+    display: block;
+}
 
-.slide-menu {
-    border: 1px solid red;
+/* ------------------------------------------Side NavBar---------------------------------------------------  */
+
+.sidenav {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: fixed;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.sidenav-2 {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    width: 0px;
+    margin-top: 18px;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+
+
+.dropdown-item {
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-item:hover > .red {
+    display: block;
+}
+
+.red {
+    display: none;
+    margin: auto 0;
+    background-color: red;
+    width: 9px;
+    height: 14px;
+}
+
+
+.hv-black {
+    font-weight: 700;
 }
 
 .hv-black:hover {
     background-color: black;
     color: white;
+}
+.dropdown-header {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.hv-orange {
+    color: grey;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.hv-orange:hover {
+    color: orangered;
+}
+
+.search-bar {
+    border: none;
+    width: 200px;
+    padding: 15px 0px 0px 22px;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+/* -----------------------------------------------Main_NavBar----------------------------------------  */
+
+#main-nav {
+    max-width: 1280px;
+    width: 100%;
+    border: 1px solid red;
+    margin: auto;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#first-main-nav {
+    display: flex;
+    margin: auto;
+    height: 95px;
+    width: 100%;
+    padding: 20px 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+}
+
+.main-nav-lower {
+    padding-top: 20px;
+}
+
+#date {
+    padding-top: 30px;
+    color: white;
+}
+
+#headline {
+    font-family: 'Rokkitt', serif;
+    font-size: 6rem;
+    color: white;
+    font-weight: 700;
+}
+   
+.second-main-nav {
+    height: 98px;
+    width: 100%;
+    padding: 15px 160px 15px 0px;
+    background-color: white;
+   
+}
+
+.nav-item {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    border-right:  1px solid rgb(194, 194, 194);
+}
+
+
+.main-search-bar {
+    width: 60px;
+}
+
+
+.trending-nav {
+    position: absolute;
+    margin-top: 13px;
+    width: 100%;
+    padding: 13px 0px 0px;
+    border-top: 2px solid	rgb(244, 245, 246);
+    border-bottom: 2px solid rgb(244, 245, 246);
 }
