@@ -1,10 +1,10 @@
-//--------------------SIDENAV BUTTON-----------
+//--------------------SIDENAV BUTTON--------------------------------------------
 
 function myFunction(x) {
     x.classList.toggle("change");
 }
 
-//--------------------SIDENAV-------------------
+//--------------------SIDENAV--------------------------------------------------------------
 
 function toggleNav() {
 let element = document.getElementById("mySidenav");
@@ -18,7 +18,7 @@ let element = document.getElementById("mySidenav");
     }
 }
 
-//----------------------DATE--------------------------
+//----------------------DATE-------------------------------------------------------------
 
 var n =  new Date();
 var year = n.getFullYear();
@@ -73,5 +73,8 @@ const monthName = (num) => {
     }
 }
 
+//----------------------------Main Search Bar---------------------------------------------
 
-
+const myMainSearch = () => {
+    document.getElementById("mySearchIcon").style.width = "60px";
+}
