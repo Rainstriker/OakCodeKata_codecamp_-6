@@ -5,10 +5,11 @@ class WizardForm extends React.Component {
     super(props);
     this.state = {
       currentStep: 1,
-      emailAddress: 'a',
-      username: 'b',
-      password: 'c'
+      emailAddress: '',
+      username: '',
+      password: ''
     }
+    
     this.changeEmail = this.changeEmail.bind(this);
     this.changeUser = this.changeUser.bind(this);
     this.changePassword = this.changePassword.bind(this);
@@ -31,13 +32,11 @@ class WizardForm extends React.Component {
 
   prev() {
     let current = this.state.currentStep;
-    console.log(current);
     current = current <= 1 ? 1 : current - 1;
     this.setState({ currentStep: current });
   }
   next() {
     let current = this.state.currentStep;
-    console.log(current);
     current = current >= 2 ? 3 : current + 1;
     this.setState({ currentStep: current });
   }
@@ -82,9 +81,9 @@ class WizardForm extends React.Component {
           <h1>React Wizard Form</h1>
           <p>Step {this.state.currentStep}</p>
           {this.renderStep()}
-          <Button currentStep={this.state.currentStep} next={this.next} prev={this.prev} disabled={this.buttonDisable}/>
+          <Button currentStep={this.state.currentStep} next={this.next} prev={this.prev}/>
         </form>
-      </div>
+      </div> //disabled={this.buttonDisable}
     );
   }
 }
@@ -94,7 +93,7 @@ class Step1 extends React.Component {
     return (
       <div>
         <label htmlFor='inputEmail'>Email address</label>
-        <input type='email' className="form-control" id='inputEmail' placeholder='Enter email' onChange={this.changeEmail} />
+        <input type='email' className="form-control" id='inputEmail' placeholder='Enter email' onChange={this.changeEmail} prev={this.prev} />
       </div>
     );
   }
@@ -126,9 +125,9 @@ class Step3 extends React.Component {
 class Button extends React.Component {
   nextButton() {
     let current = this.props.currentStep;
-    if (current < 4) {
+    if (current <= 3) {
       return (
-        <button type="submit" className="btn btn-primary" onClick={this.props.next} disabled={this.props.disabled}>
+        <button type="submit" className="btn btn-primary" onClick={this.props.next}>
           Next
         </button>
       );
@@ -140,9 +139,9 @@ class Button extends React.Component {
     let current = this.props.currentStep;
     if (current !== 1) {
       return (
-        <a className="btn btn-primary" role="button" onClick={this.props.prev}>
+        <button className="btn btn-primary" onClick={this.props.prev}>
           Previous
-        </a>
+        </button>
       );
     }
     return null;
