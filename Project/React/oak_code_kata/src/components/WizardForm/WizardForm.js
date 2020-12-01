@@ -15,19 +15,21 @@ class WizardForm extends React.Component {
     this.changePassword = this.changePassword.bind(this);
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
-    this.buttonDisable = this.buttonDisable.bind(this);
+    this.handlerKeypress = this.handlerKeypress.bind(this);
+    this.handlerDisable = this.handlerDisable.bind(this);
+    this.handlerSubmit = this.handlerSubmit.bind(this);
   }
 
   changeEmail(event) {
-    this.setState({ emailAddress: event });
+    this.setState({ emailAddress: event.target.value });
   }
 
   changeUser(event) {
-    this.setState({ username: event });
+    this.setState({ username: event.target.value });
   }
 
   changePassword(event) {
-    this.setState({ password: event });
+    this.setState({ password: event.target.value });
   }
 
   prev() {
@@ -44,46 +46,66 @@ class WizardForm extends React.Component {
   renderStep() {
     let current = this.state.currentStep;
     if (current === 1) {
-      return <Step1 changeEmail={this.changeEmail} />;
+      return <Step1 changeEmail={this.changeEmail} onKeyPress={this.handlerKeypress} />;
     } else if (current === 2) {
-      return <Step2 changeUser={this.changeUser} />;
+      return <Step2 changeUser={this.changeUser} onKeyPress={this.handlerKeypress} />;
     } else if (current === 3) {
-      return <Step3 changePassword={this.changePassword} />;
+      return <Step3 changePassword={this.changePassword} onKeyPress={this.handlerKeypress} />;
     }
     return this.renderSubmit();
   }
 
-  buttonDisable() {
-    let current = this.state.currentStep;
-    let stateArr = this.state.currentStep;
-    console.log(stateArr);
-    return Object.keys(stateArr)[current].length < 1;
+  handlerKeypress(event) {
+    if (event.key === 'Enter') {
+      if (this.state.currentStep === 3) {
+        this.handlerSubmit();
+      } else {
+        this.next();
+      }
+    }
   }
+
+  handlerDisable() {
+    if (this.state.currentStep === 1) {
+      return !this.state.emailAddress;
+    } else if (this.state.currentStep === 2) {
+      return !this.state.username;
+    } else if (this.state.currentStep === 3) {
+      return !this.state.password;
+    }
+    return false;
+  } 
 
   handlerSubmit() {
     let current = this.state.currentStep;
-    if (current > 3) {
+    if (current === 3) {
       alert(
         `Your registration detail: \n 
-        Email: ${this.email} \n 
-        Username: ${this.username} \n
-        Password: ${this.password}`
+        Email: ${this.state.emailAddress} \n 
+        Username: ${this.state.username} \n
+        Password: ${this.state.password}`
       );
     }
     return null;
   }
 
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handlerSubmit}>
           <h2>{this.state[1]}</h2>
           <h1>React Wizard Form</h1>
           <p>Step {this.state.currentStep}</p>
           {this.renderStep()}
-          <Button currentStep={this.state.currentStep} next={this.next} prev={this.prev}/>
+          <Button 
+            currentStep={this.state.currentStep} 
+            next={this.next} 
+            prev={this.prev} 
+            disabled={this.handlerDisable()}
+          />
         </form>
-      </div> //disabled={this.buttonDisable}
+      </div> 
     );
   }
 }
@@ -93,7 +115,14 @@ class Step1 extends React.Component {
     return (
       <div>
         <label htmlFor='inputEmail'>Email address</label>
-        <input type='email' className="form-control" id='inputEmail' placeholder='Enter email' onChange={this.changeEmail} prev={this.prev} />
+        <input 
+          type='email' 
+          className="form-control" 
+          id='inputEmail' 
+          placeholder='Enter email' 
+          onChange={this.props.changeEmail}
+          onKeyPress={this.props.onKeyPress}
+        />
       </div>
     );
   }
@@ -104,7 +133,14 @@ class Step2 extends React.Component {
     return (
       <div>
         <label htmlFor='inputUsername'>Username</label>
-        <input type='text' className="form-control" id='inputUsername' placeholder='Enter username' onChange={this.changeUser} />
+        <input 
+          type='text' 
+          className="form-control" 
+          id='inputUsername' 
+          placeholder='Enter username' 
+          onChange={this.props.changeUser}
+          onKeyPress={this.props.onKeyPress} 
+        />
       </div>
     );
   }
@@ -116,7 +152,14 @@ class Step3 extends React.Component {
     return (
       <div>
         <label htmlFor='inputPassword'>Password</label>
-        <input type='password' className="form-control" id='inputPassword' placeholder='Enter password' onChange={this.changePassword} />
+        <input 
+          type='password' 
+          className="form-control" 
+          id='inputPassword' 
+          placeholder='Enter password' 
+          onChange={this.props.changePassword}
+          onKeyPress={this.props.onKeyPress} 
+        />
       </div>
     );
   }
@@ -127,7 +170,7 @@ class Button extends React.Component {
     let current = this.props.currentStep;
     if (current <= 3) {
       return (
-        <button type="submit" className="btn btn-primary" onClick={this.props.next}>
+        <button type="submit" className="btn btn-primary m-2" onClick={this.props.next} disabled={this.props.disabled}> 
           Next
         </button>
       );
@@ -139,7 +182,7 @@ class Button extends React.Component {
     let current = this.props.currentStep;
     if (current !== 1) {
       return (
-        <button className="btn btn-primary" onClick={this.props.prev}>
+        <button className="btn btn-primary m-2" onClick={this.props.prev}>
           Previous
         </button>
       );
@@ -149,7 +192,7 @@ class Button extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="d-flex justify-content-end">
         {this.prevButton()}
         {this.nextButton()}
       </div>
