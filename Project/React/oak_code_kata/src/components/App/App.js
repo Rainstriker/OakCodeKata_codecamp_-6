@@ -1,11 +1,14 @@
 import React from 'react';
+import NavBar from '../NavBar/NavBar.js';
 import CardList from '../CardList/CardList.js'
 
 function App() {
   return (
-    <div>
-      <CardList />
-    </div>
+    <React.Fragment>
+      <NavBar />
+
+
+    </React.Fragment>
   );
 }
 
