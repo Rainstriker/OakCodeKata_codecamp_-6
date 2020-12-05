@@ -6,6 +6,7 @@ import CardList from '../CardList/CardList.js';
 import WizardForm from '../WizardForm/WizardForm.js';
 import AutoComplete from '../AutoComplete/AutoComplete.js'
 import SearchFilter from '../SearchFilter/SearchFilter.js';
+import SampleForm from '../SampleForm/SampleForm.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/wizard_form' component={WizardForm}/>
       <Route path='/auto_complete' component={AutoComplete}/>
       <Route path='/search_filter' component={SearchFilter}/>
+      <Route path='/sample_form' component={SampleForm}/>
     </React.Fragment>
   );
 }

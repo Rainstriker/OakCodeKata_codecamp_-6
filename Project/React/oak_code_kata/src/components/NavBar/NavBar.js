@@ -24,6 +24,9 @@ const NavBar = () => {
             <NavDropdown.Item as={Link} to="/search_filter">
                 Project 5 - Search and Filter List Records
             </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/sample_form">
+                Project 6 - Search and Filter List Records
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Form inline>
