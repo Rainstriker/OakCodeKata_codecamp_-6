@@ -30,7 +30,7 @@ const FormInput = props => {
           </h6>
         </label>
         <select className="form-control" onChange={props.destination}>
-          <option key="1">--Please Choose a destination --</option>
+          <option key="1" value="">--Please Choose a destination --</option>
           <option key="2">Thailand</option>
           <option key="3">Japan</option>
           <option key="4">Brazil</option>
@@ -38,11 +38,11 @@ const FormInput = props => {
       </div>
       <h6>Dietary restrictions:</h6>
       <div className="form-group form-check">
-        <input className="form-check-input" type="checkbox" id="nutsFree" name="dietary1" value={true} onChange={props.nutsFree}/>
+        <input className="form-check-input" type="checkbox" id="nutsFree" name="dietary1" onChange={props.nutsFree}/>
         <label className="form-check-label" for="nutsFree" className="form-check-label">Nuts free</label><br />
-        <input className="form-check-input" type="checkbox" id="lactoseFree" name="dietary2" value={true} onChange={props.lactoseFree}/>
+        <input className="form-check-input" type="checkbox" id="lactoseFree" name="dietary2" onChange={props.lactoseFree}/>
         <label className="form-check-label" for="lactoseFree" className="form-check-label">Lactose free</label><br />
-        <input className="form-check-input" type="checkbox" id="vegan" name="dietary3" value={true} onChange={props.isVegan}/>
+        <input className="form-check-input" type="checkbox" id="vegan" name="dietary3" onChange={props.isVegan}/>
         <label className="form-check-label" for="vegan" className="form-check-label">Vegan</label><br />
       </div>
       <button type="submit" className="btn btn-primary" onSubmit={props.submit}>Submit</button>

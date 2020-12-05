@@ -32,16 +32,16 @@ const SampleForm = () => {
     setDestination(e.target.value);
   }
 
-  const nutsFreeHandle = e => {
-    setNutsFree(e.target.value);
+  const nutsFreeHandle = () => {
+    setNutsFree(!nutsFree);
   }
 
-  const lactoseFreeHandle = e => {
-    setLactoseFree(e.target.value);
+  const lactoseFreeHandle = () => {
+    setLactoseFree(!lactoseFree);
   }
 
-  const isVeganHandle = e => {
-    setIsVegan(e.target.value);
+  const isVeganHandle = () => {
+    setIsVegan(!isVegan);
   }
 
   const submitHandle = () => {
