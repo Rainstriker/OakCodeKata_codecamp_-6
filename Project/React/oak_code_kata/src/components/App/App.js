@@ -7,6 +7,7 @@ import WizardForm from '../WizardForm/WizardForm.js';
 import AutoComplete from '../AutoComplete/AutoComplete.js'
 import SearchFilter from '../SearchFilter/SearchFilter.js';
 import SampleForm from '../SampleForm/SampleForm.js';
+import ValidatedForm from '../ValidatedForm/ValidatedForm.js';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path='/auto_complete' component={AutoComplete}/>
       <Route path='/search_filter' component={SearchFilter}/>
       <Route path='/sample_form' component={SampleForm}/>
+      <Route path='/validated_form' component={ValidatedForm}/>
     </React.Fragment>
   );
 }
