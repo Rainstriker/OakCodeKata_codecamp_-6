@@ -70,7 +70,16 @@ const SampleForm = () => {
         submit={submitHandle}
       />
       <hr className="my-2" style={{backgroundColor: "grey"}}/>
-      <EnteredInfo />
+      <EnteredInfo 
+        firstName={firstName}
+        lastName={lastName}
+        age={age}
+        gender={gender}
+        destination={destination}
+        nutsFree={nutsFree}
+        lactoseFree={lactoseFree}
+        isVegan={isVegan}
+      />
     </div>
   );
 }

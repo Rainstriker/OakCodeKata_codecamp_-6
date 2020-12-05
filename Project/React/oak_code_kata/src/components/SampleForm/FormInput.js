@@ -4,13 +4,13 @@ const FormInput = props => {
   return (
     <form className="p-3" style={{backgroundColor: "#DEB887"}}>
       <div className="form-group">
-        <input type="text" placeholder="First Name" onChange={props.firstName}/>
+        <input className="w-50" type="text" placeholder="First Name" onChange={props.firstName}/>
       </div>
       <div className="form-group">
-        <input type="text" placeholder="Last Name" onChange={props.lastName}/>
+        <input className="w-50" type="text" placeholder="Last Name" onChange={props.lastName}/>
       </div>
       <div className="form-group">
-        <input type="text" placeholder="Age" onChange={props.age}/>
+        <input className="w-50" type="text" placeholder="Age" onChange={props.age}/>
       </div>
       <br />
       <div className="form-group">
@@ -29,7 +29,7 @@ const FormInput = props => {
             Select your destination
           </h6>
         </label>
-        <select className="form-control" onChange={props.destination}>
+        <select className="form-control w-25" onChange={props.destination}>
           <option key="1" value="">--Please Choose a destination --</option>
           <option key="2">Thailand</option>
           <option key="3">Japan</option>

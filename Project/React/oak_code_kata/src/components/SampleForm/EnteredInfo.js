@@ -1,18 +1,19 @@
 import React from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-const EnteredInfo = () => {
+const EnteredInfo = props => {
   return (
     <div className="p-3" style={{backgroundColor: "#1E5555", color: "white"}}>
-      <h4>Entered information:</h4><br />
-      <h6>Your name: </h6><br />
-      <h6>Your age: </h6><br />
-      <h6>Your gender: </h6><br />
-      <h6>Your destinations: </h6><br />
+      <h4>Entered information: </h4><br />
+      <h6>Your name: {props.firstName} {props.lastName}</h6><br />
+      <h6>Your age: {props.age}</h6><br />
+      <h6>Your gender: {props.gender}</h6><br />
+      <h6>Your destinations: {props.destination}</h6><br />
       <h6>Your dietary restrictions: </h6><br />
       <div className="pl-3 pb-4" style={{lineHeight: 0.5}}>
-        <p>**Nuts free : </p>
-        <p>**Lactose free : </p>
-        <p>**Vegan meal : </p>
+        <p>**Nuts free : {props.nutsFree ? 'Yes' : 'No'}</p>
+        <p>**Lactose free : {props.lactoseFree ? 'Yes' : 'No'}</p>
+        <p>**Vegan meal : {props.isVegan ? 'Yes' : 'No'}</p>
       </div>
     </div>
   );
