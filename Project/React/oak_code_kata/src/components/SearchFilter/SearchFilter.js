@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Data from './Data.js';
+import CuisineCard from './CuisineCard.js';
 import DropdownCuisine from './DropdownCuisine.js';
+import './SearchFilter.css'
 
 const SearchFilter = () => {
   const [cuisine, setCuisine] = useState('Choose Any');
@@ -8,12 +10,17 @@ const SearchFilter = () => {
   const [filteredCuisine, setFilteredCuisine] = useState([]);
   const [sortedRanking, setSortedRanking] = useState([]);
   
+  const selectCuisine = e => {
+    console.log('test');
+    setCuisine(e.target.value);
+  }
+
   const filterCuisine = () => {
     const matchRestaurant = Data.filter(restaurant => restaurant['Cuisine Style'].match(`/${cuisine}/i`));
     setFilteredCuisine(matchRestaurant);
   };
 
-  const sortRanking = (sortType) => {
+  const sortRanking = sortType => {
     if (sortType === 'Rating: Low to High') {
       setSortedRanking( sortLowToHigh(filteredCuisine) );
     } else if (sortType === 'Rating: High to Low') {
@@ -39,8 +46,11 @@ const SearchFilter = () => {
   
 
   return (
-    <div>
-      <DropdownCuisine />
+    <div className="px-5">
+      <DropdownCuisine 
+        select={selectCuisine}
+      />
+      <CuisineCard />
     </div>
   );
 }

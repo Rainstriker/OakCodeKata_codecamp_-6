@@ -1,0 +1,24 @@
+.restaurant-container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-gap: 1rem;
+}
+
+.cuisine-city {
+  padding-top: 10px;
+  padding-bottom: 0;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.cuisine {
+  margin: 1.8px;
+  font-size: 0.8rem;
+  border: 1px solid gray;
+}
+
+.rating-container {
+  height: 100%;
+}
+
