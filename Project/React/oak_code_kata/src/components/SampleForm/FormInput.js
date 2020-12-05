@@ -1,27 +1,35 @@
 import React from 'react';
 
-const FormInput = () => {
+const FormInput = props => {
   return (
-    <form>
-      <div class="form-group">
-        <input type="text" /><br />
-        <input type="text" /><br />
-        <input type="text" /><br />
+    <form className="p-3" style={{backgroundColor: "#DEB887"}}>
+      <div className="form-group">
+        <input type="text" placeholder="First Name" onChange={props.firstName}/>
+      </div>
+      <div className="form-group">
+        <input type="text" placeholder="Last Name" onChange={props.lastName}/>
+      </div>
+      <div className="form-group">
+        <input type="text" placeholder="Age" onChange={props.age}/>
       </div>
       <br />
-      <div class="form-group">
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Male</label><br />
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label><br />
+      <div className="form-group">
+        <div class="form-check">
+          <input className="form-check-input" type="radio" id="male" name="gender" value="male" onChange={props.gender}/>
+          <label className="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input className="form-check-input" type="radio" id="female" name="gender" value="female" onChange={props.gender}/>
+          <label className="form-check-label" for="female">Female</label>
+        </div>
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <label>
           <h6>
             Select your destination
           </h6>
-        </label><br />
-        <select>
+        </label>
+        <select className="form-control" onChange={props.destination}>
           <option key="1">--Please Choose a destination --</option>
           <option key="2">Thailand</option>
           <option key="3">Japan</option>
@@ -29,15 +37,15 @@ const FormInput = () => {
         </select>
       </div>
       <h6>Dietary restrictions:</h6>
-      <div class="form-group form-check">
-        <input type="checkbox" id="nutsFree" name="dietary1" value="nuts free" />
-        <label for="nutsFree" className="form-check-label">Nuts free</label><br />
-        <input type="checkbox" id="lactoseFree" name="dietary2" value="lactose free" />
-        <label for="lactoseFree" className="form-check-label">Lactose free</label><br />
-        <input type="checkbox" id="vegan" name="dietary3" value="vegan" />
-        <label for="vegan" className="form-check-label">Vegan</label><br />
+      <div className="form-group form-check">
+        <input className="form-check-input" type="checkbox" id="nutsFree" name="dietary1" value={true} onChange={props.nutsFree}/>
+        <label className="form-check-label" for="nutsFree" className="form-check-label">Nuts free</label><br />
+        <input className="form-check-input" type="checkbox" id="lactoseFree" name="dietary2" value={true} onChange={props.lactoseFree}/>
+        <label className="form-check-label" for="lactoseFree" className="form-check-label">Lactose free</label><br />
+        <input className="form-check-input" type="checkbox" id="vegan" name="dietary3" value={true} onChange={props.isVegan}/>
+        <label className="form-check-label" for="vegan" className="form-check-label">Vegan</label><br />
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary" onSubmit={props.submit}>Submit</button>
     </form>
   );
 }
