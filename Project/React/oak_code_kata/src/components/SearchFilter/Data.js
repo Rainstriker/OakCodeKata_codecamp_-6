@@ -169,4 +169,11 @@ const Data = [
   }  
 ]
 
+export const CuisineOptions =  ['Choose Any', 'French', 'Dutch', 'Europea', 'European', 'Vegetarian Friendly', 'Gluten Free Option', 'Mediterranean',
+  'International', 'Vegan Option', 'Contemporary', 'Vegan Options', 'Asian', 'Indonesian', 'Japanese', 'Seafood', 'Fast Foo', 'American',
+  'Bar', 'Central European', 'Pu', 'Cafe', 'British', 'Healthy', 'Indian', 'Tibetan', 'Nepali', 'Italian', 'Vegetarian Friendl'
+];
+
+export const SortOptions = ['Ranking', 'Rating: Low to High', 'Rating: High to Low'];
+
 export default Data;

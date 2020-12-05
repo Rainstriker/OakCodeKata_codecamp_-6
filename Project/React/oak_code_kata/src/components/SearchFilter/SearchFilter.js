@@ -1,56 +1,56 @@
-import React, { useState } from 'react';
-import Data from './Data.js';
-import CuisineCard from './CuisineCard.js';
-import DropdownCuisine from './DropdownCuisine.js';
+import React, { useState, useEffect } from 'react';
+import Data, {CuisineOptions, SortOptions} from './Data.js';
+import Searchlist from './Searchlist.js';
 import './SearchFilter.css'
 
 const SearchFilter = () => {
-  const [cuisine, setCuisine] = useState('Choose Any');
-  const [ranking, setRanking] = useState('Ranking');
-  const [filteredCuisine, setFilteredCuisine] = useState([]);
-  const [sortedRanking, setSortedRanking] = useState([]);
-  
-  const selectCuisine = e => {
-    console.log('test');
-    setCuisine(e.target.value);
+  const [restaurants, setRestaurants] = useState(Data);
+
+  const cuisineHandle = e => {
+    const term = e.target.value;
+    if (term !== 'Choose Any') {
+      setRestaurants(
+        Data.filter(key =>{
+          return key["Cuisine Style"].match(term);
+        })
+      );
+    } else {
+      setRestaurants(Data);
+    }
   }
 
-  const filterCuisine = () => {
-    const matchRestaurant = Data.filter(restaurant => restaurant['Cuisine Style'].match(`/${cuisine}/i`));
-    setFilteredCuisine(matchRestaurant);
-  };
-
-  const sortRanking = sortType => {
-    if (sortType === 'Rating: Low to High') {
-      setSortedRanking( sortLowToHigh(filteredCuisine) );
-    } else if (sortType === 'Rating: High to Low') {
-      setSortedRanking( sortHighToLow(filteredCuisine) );
-    } else {
-      setSortedRanking( filteredCuisine );
-    }
-  };
-
-  const sortHighToLow = () => {
-    const matchRestaurant = Data.sort((a, b) => {
-      return (a["Rating"] > b["Rating"]) ? 1 : -1;
-    });
-    setSortedRanking(matchRestaurant);
-  };
-
-  const sortLowToHigh = () => {
-    const matchRestaurant = Data.sort((a, b) => {
-      return (a["Rating"] < b["Rating"]) ? 1 : -1;
-    });
-    setSortedRanking(matchRestaurant);
-  };
-  
+  const sortHandle = e => {
+    const sortTerm = e.target.value;
+    let sortedArr = [];
+    if (sortTerm === 'Ranking') {
+      sortedArr = restaurants.slice().sort( (a, b) => {
+          return a['Ranking'] > b['Ranking'] ? 1 : -1;
+        });
+      } else if (sortTerm === 'Rating: Low to High') {
+        sortedArr = restaurants.slice().sort( (a, b) => {
+          return a['Rating'] > b['Rating'] ? 1 : -1;
+        });
+      } else {
+        sortedArr = restaurants.slice().sort( (a, b) => {
+          return a['Rating'] < b['Rating'] ? 1 : -1;
+        });
+      }
+      setRestaurants(sortedArr);
+  }
 
   return (
     <div className="px-5">
-      <DropdownCuisine 
-        select={selectCuisine}
+      <Searchlist
+      //pass state
+        restaurants={restaurants}
+      //pass event handler
+        cuisineHandle={cuisineHandle}
+        cuisine={cuisineHandle}
+        sort={sortHandle}
+      //pass data option
+        cuisineOptions={CuisineOptions}
+        sortOptions={SortOptions} 
       />
-      <CuisineCard />
     </div>
   );
 }
