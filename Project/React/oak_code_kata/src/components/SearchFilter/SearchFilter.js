@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Data, {CuisineOptions, SortOptions} from './Data.js';
 import Searchlist from './Searchlist.js';
 import './SearchFilter.css'
