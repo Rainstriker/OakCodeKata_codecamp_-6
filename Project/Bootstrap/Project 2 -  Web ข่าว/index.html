@@ -1,43 +1,47 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./index.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <script src="./index.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>
-
     <!------------------------------------------------Sticky Navbar----------------------------------------->
-
-        <nav id="sticky">
-            <h3>Newsweek</h3>
-            <ul class="nav-btn-container">
-                <li class="nav-btn">
-                    <a href="" id="login-btn">LOGIN</a>
-                </li>
-                <li class="nav-btn" >
-                    <div id="sub-btn">
-                        <a href="">SUBSCRIBE<i class="arrow right"></i></a>
-                    </div>
-                </li>
-                <li class="nav-btn">
-                    <div id="menu-dropdown" onclick="myFunction(this); toggleNav()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-    <!---------------------------------------------------Side NavBar------------------------------------------>
+    <nav id="sticky" onscroll="scorllCheck()">
+        <h3>Newsweek</h3>
+        <ul class="nav-btn-container">
+            <li class="nav-btn">
+                <a href="" id="login-btn">LOGIN</a>
+            </li>
+            <li class="nav-btn">
+                <div id="sub-btn">
+                    <a href="">SUBSCRIBE<i class="arrow right"></i></a>
+                </div>
+            </li>
+            <li class="nav-btn">
+                <div id="menu-dropdown" onclick="toggleChange(this); toggleNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <header class="container p-0">
+        <!---------------------------------------------------Side NavBar------------------------------------------>
 
         <div class="sidenav" id="mySidenav">
             <form action="">
@@ -100,7 +104,7 @@
             <i class="fa fa-search"></i>
         </div>
 
-    <!---------------------------------------------------Main NavBar------------------------------------------>
+        <!---------------------------------------------------Main NavBar------------------------------------------>
 
         <div id="main-nav">
             <div id="first-main-nav">
@@ -110,50 +114,58 @@
                     <li class="nav-btn">
                         <a href="" id="login-btn">LOGIN</a>
                     </li>
-                    <li class="nav-btn" >
+                    <li class="nav-btn">
                         <div id="sub-btn">
                             <a href="">SUBSCRIBE<i class="arrow right"></i></a>
                         </div>
                     </li>
-                    <div class="header-decoration"></div>
+                    <div class="header-decoration">
+                        <i class="fa fa-search" id="main-fa-search"></i>
+                    </div>
                 </ul>
             </div>
             <div class="second-main-nav">
                 <div class="news-nav">
-                    <ul class="nav nav-pills nav-fill" id="news-nav-content">
-                        <li class="nav-item">
-                          <a class="nav-link px-0 py-0" href="#">U.S.</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link px-0 py-0" href="#">World</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Business</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Tech & Science</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Culture</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Newsgeek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Sports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Health</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">The Debate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-0 py-0" href="#">Vantage</a>
-                        </li>
-                        <li class="nav-item" id="except_border">
-                            <a class="nav-link px-0 py-0" href="#">Weather</a>
-                        </li>
+                    <ul class="nav nav-fill d-flex justify-content-start" id="news-nav-content">
+                        <ul class="nav nav-pills nav-fill" id="news-nav-content2">
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">U.S.</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">World</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Business</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Tech & Science</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Culture</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Newsgeek</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Sports</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Health</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">The Debate</a>
+                            </li>
+                            <li class="nav-item main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Vantage</a>
+                            </li>
+                            <li class="nav-item except_border main-nav-item">
+                                <a class="nav-link px-0 py-0" href="#">Weather</a>
+                            </li>
+                        </ul>
+                        <form class="nav-item d-inline border-0" action="" id="main_search">
+                            <input id="main-search-bar" type="search" placeholder="Search" class="container-fluid"
+                                onfocus="navBarHide()" onblur="navhBarShow()">
+                        </form>
                     </ul>
                 </div>
                 <nav class="nav trending-nav">
@@ -164,17 +176,180 @@
                     <a class="nav-link pt-0" href="#">STIMULUS PACKAGE</a>
                     <a class="nav-link pt-0" href="#">CORONAVIRUS</a>
                     <a class="nav-link pt-0" href="#">COUNTIES THAT COUNT</a>
-                    <form action="" id="main_search">
-                        <input class="main-search-bar" type="search" placeholder="Search">
-                        <i class="fa fa-search"></i>
-                    </form>
                 </nav>
             </div>
         </div>
+    </header>
 
-    </header>    
+    <!---------------------------------------------------Main Body------------------------------------------>
+    <!--------First Left Sticky Medium Column-------->
+    <div class="container pt-4" id="daily_news">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <h5 class="col-catagory">FEATURED STORIES</h5>
+                <div class="card py-2">
+                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News title 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, 
+                            numquam voluptas aliquam, dolorum ratione nobis officiis modi tenetur non magni at 
+                            nulla optio dicta quia quae dolorem illum libero harum.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-sm-12 col-lg-8">
+                <h5 class="col-catagory">TOP STORIES</h5>
+                <div class="card py-4">
+                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News title 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, 
+                            numquam voluptas aliquam, dolorum ratione nobis officiis modi tenetur non magni at 
+                            nulla optio dicta quia quae dolorem illum libero harum.</p>
+                    </div>
+                </div>  
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <div class="card py-2">
+                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News title 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, 
+                            numquam voluptas aliquam, dolorum ratione nobis officiis modi tenetur non magni at 
+                            nulla optio dicta quia quae dolorem illum libero harum.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-lg-8">
+                <div class="col-sm-none col-lg-12">
+                    <h5 class="col-catagory">MY TURN</h5>
+                    <div class="col-sm-none col-lg-12">
+                        <div class="row">
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 1</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 2</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 3</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 4</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 5</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col-sm-none col-lg-4">
+                                <div class="card py-4">
+                                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My turn 6</h5>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="card py-2">
+                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News title 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, 
+                            numquam voluptas aliquam, dolorum ratione nobis officiis modi tenetur non magni at 
+                            nulla optio dicta quia quae dolorem illum libero harum.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-lg-6 d-flex">
+                        <img class="m-auto p-auto" src="https://dummyimage.com/200x200/000/fff"/>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="card-body">
+                          <h5 class="card-title">More story 1</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem soluta suscipit enim accusamus, 
+                              labore quasi voluptate ut tempora dolores nesciunt! </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-none col-lg-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-lg-6 d-flex">
+                        <img class="m-auto p-auto" src="https://dummyimage.com/240x240/000/fff"/>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="card-body">
+                          <h5 class="card-title">More story 2</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem soluta suscipit enim accusamus, 
+                              labore quasi voluptate ut tempora dolores nesciunt! </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <div class="card py-2">
+                    <img src="https://dummyimage.com/390.75x260.77/000/fff" class="card-img-top \" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News title 4</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, 
+                            numquam voluptas aliquam, dolorum ratione nobis officiis modi tenetur non magni at 
+                            nulla optio dicta quia quae dolorem illum libero harum.</p>
+                    </div>
+                </div>  
+            </div>     
+        </div>
+    </div>
+    <footer>
+        <div>
+            <h1>Newsweek</h1>
+            <small><p>© 2020 NEWSWEEK DIGITAL LLC </p></small>
+        </div>
+    </footer>
 </body>
 <script>
     document.getElementById("date").innerHTML = `${weekDay(weekDayNum)}, ${monthName(month)} ${dayNum}, ${year}`;
 </script>
+
 </html>

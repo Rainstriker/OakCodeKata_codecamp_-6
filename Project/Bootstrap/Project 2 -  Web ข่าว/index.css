@@ -12,16 +12,24 @@ input[type="search"]::-webkit-search-results-decoration {
 body {
     background-color: rgb(244, 245, 246);
 }
+html,html *{
+    box-sizing: border-box;
+}
 /* ------------------------------------------STICKY_NAVBAR-------------------------------------------  */
 
 #sticky {
+    float: left;
+    top: -50px;
+    width: 100%;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f72210;
     height: 50px;
     padding: 15px;
-    z-index: 1;
+    z-index: 3;
+    transition: 0.3s;
 }
 
 #sticky  h3 {
@@ -125,7 +133,9 @@ body {
 }
 
 /* ------------------------------------------Side NavBar---------------------------------------------------  */
-
+#mySidenav, #mySearchIcon {
+    padding-top: 50px;
+}
 .sidenav {
     font-family: 'Roboto Condensed', sans-serif;
     position: fixed;
@@ -146,8 +156,6 @@ body {
     transition: 0.3s;
     z-index: 1;
 }
-
-
 
 .dropdown-item {
     font-size: 1.25rem;
@@ -211,6 +219,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+
 #first-main-nav {
     display: flex;
     margin: auto;
@@ -248,13 +257,16 @@ body {
    
 }
 
+#news-nav-content2 {
+    width: 95%;
+}
+
 .news-nav {
     height: 33px;
 }
 
 #news-nav-content {
     width: 100%;
-
 }
 
 .nav-item {
@@ -264,34 +276,41 @@ body {
     height: 23px;
 }
 
-#except_border {
+.except_border {
     border: none;
 }
 
-.main-search-bar {
-    width: 60px;
+#main-search-bar {
+    outline: none;
+    width: 100px;
     border: none;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 300; 
+    float: left; 
+    transition: width 0.6s ease;
 }
 
-.main-search-bar:focus {
+#main-search-bar:focus {
     outline: none;
-    position: relative;
     width: 100%;
-    right: 1000px;
+    max-width: 1280px;
+    min-width: 60px;
 }
 
+#main-fa-search {
+   position: relative;
+   top: 20px;
+   right: 20px;
+}
 #main_search {
+    display: flex;
+    justify-content: flex-start;
     position: relative;
-    left: 180px;
-    bottom: 46px; 
+    left: 0px;
+    width: 10px;
+    height: 40px;
+    bottom: 2px;
 }
-
-#main_search:focus {
-    width: 100%;
-}
-
 
 .trending-nav {
     position: absolute;
@@ -336,4 +355,31 @@ body {
   }
 
  
-  
+/*--------------------------------left col------------------------------------------------------*/
+#daily_news {
+    width: 100%;
+}
+
+.card {
+    display:  inline;
+    width: 390.75px;
+    height: 260.77px;
+    word-wrap: break-word;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+footer {
+    position: relative;
+    margin-bottom: 0;
+    bottom: -15;
+    color: white;
+    background-color: #f72210;
+}
