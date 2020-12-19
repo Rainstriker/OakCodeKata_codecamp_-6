@@ -384,12 +384,51 @@ footer {
     background-color: #f72210;
 }
 
+
+
+/* news detail css --------------------------------------------------------*/
+
+.news-header-inner {
+  width: 100%;
+  max-width: 1140px;
+  background-color: white;
+}
+
+.news-header {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content:  center;
+}
+
+.news-detail {
+  background-color: white;
+  display: flex;
+  justify-content:  center;
+}
+
+.news-detail-inner {
+  width: 100%;
+  max-width: 1140px;
+}
+
+.news-detail-inner img{
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 10%; 
+}
+
 @media only screen and (max-width: 1092px) {
-    #main-nav {
-      display: none;
-    }
-  
-    #sticky {
-      top: 0px;
-    }
+  #main-nav {
+    display: none;
   }
+
+  #sticky {
+    top: 0px;
+  }
+
+  .news-header {
+    margin-top: 50px;
+  }
+}

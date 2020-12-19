@@ -91,7 +91,7 @@ const navBarHide = () => {
     for (let i in arr) {
         arr[i].style.display = "none";
     }
-    
+
 }
 
 const navhBarShow = () => {
@@ -107,11 +107,14 @@ const navhBarShow = () => {
         mainNav.style.width = '95%';
 
         for (let i in arr) {
-        arr[i].style.display = "block";
+            arr[i].style.display = "block";
         }
-    },10)
-    
+    }, 10)
+
 }
+
+
+
 
 let arr = document.getElementById("menu-dropdown");
 const sideNav = document.getElementById("mySidenav");
@@ -131,4 +134,3 @@ if (!window.screen.width <= '1092px') {
         }
     }
 } 
-
