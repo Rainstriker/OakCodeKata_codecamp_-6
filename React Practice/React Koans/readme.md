@@ -4,7 +4,7 @@
 
 ###### Hello Wordld!
 
-![Koan1](images/01.png)
+![Koan2](images/01.PNG)
 
   เรียนรู้การแสดงผลคำว่า Hello World ได้เรียนรู้ว่า react สามารถ render html tagได้
 
