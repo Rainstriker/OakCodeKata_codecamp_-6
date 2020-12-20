@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const model = sequelize.define('News', {
+  const model = sequelize.define('Image', {
     name: {
       type: DataTypes.STRING(255)
     },
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255)
     }
   }, {
-    tableName: 'news',
+    tableName: 'images',
     timestamps: false
   });
 
