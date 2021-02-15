@@ -21,6 +21,13 @@
 
   ****To navigate file, go to oak_code_kata dir. Open terminal and type npm start.**
   
+  # Figma
+  1. https://www.figma.com/file/8xJvujgXQ74NMtemi2lAIq/Money-Manager
+  2. https://www.figma.com/file/Pxh4KO4cuejfu2OJkhlPQA/React-Money-Manager
+  
+  # Database design
+  1. https://drive.google.com/file/d/1BXj6Jf38m39324w9-SthMKNTKvO1Squl/view?usp=sharing
+  
 # Personal Project
 
   [Money Manager](https://github.com/Rainstriker/money-manager)
